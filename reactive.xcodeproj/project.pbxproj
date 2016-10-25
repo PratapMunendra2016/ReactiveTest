@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		048847B81DBF30240095FA60 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847B71DBF30240095FA60 /* ProjectModel.swift */; };
-		048847BB1DBF358E0095FA60 /* VTWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847BA1DBF358E0095FA60 /* VTWebservice.swift */; };
+		048847B81DBF30240095FA60 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847B71DBF30240095FA60 /* Model.swift */; };
 		048847BD1DBF3C6D0095FA60 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847BC1DBF3C6D0095FA60 /* ProjectTableViewCell.swift */; };
+		048847C11DBF5F290095FA60 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847C01DBF5F290095FA60 /* DetailViewController.swift */; };
+		048847C71DBF63C90095FA60 /* RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847C31DBF63C90095FA60 /* RAC.swift */; };
+		048847C81DBF63C90095FA60 /* RACObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847C41DBF63C90095FA60 /* RACObserve.swift */; };
+		048847C91DBF63C90095FA60 /* RACSignal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847C51DBF63C90095FA60 /* RACSignal+Extensions.swift */; };
+		048847CA1DBF63C90095FA60 /* TableViewBindingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847C61DBF63C90095FA60 /* TableViewBindingHelper.swift */; };
 		04A485FB1DBF18F400016DA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A485FA1DBF18F400016DA2 /* AppDelegate.swift */; };
 		04A485FD1DBF18F400016DA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A485FC1DBF18F400016DA2 /* ViewController.swift */; };
 		04A486001DBF18F400016DA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A485FE1DBF18F400016DA2 /* Main.storyboard */; };
@@ -40,9 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		048847B71DBF30240095FA60 /* ProjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
-		048847BA1DBF358E0095FA60 /* VTWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VTWebservice.swift; sourceTree = "<group>"; };
+		048847B71DBF30240095FA60 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		048847BC1DBF3C6D0095FA60 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
+		048847C01DBF5F290095FA60 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		048847C31DBF63C90095FA60 /* RAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAC.swift; sourceTree = "<group>"; };
+		048847C41DBF63C90095FA60 /* RACObserve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACObserve.swift; sourceTree = "<group>"; };
+		048847C51DBF63C90095FA60 /* RACSignal+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RACSignal+Extensions.swift"; sourceTree = "<group>"; };
+		048847C61DBF63C90095FA60 /* TableViewBindingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBindingHelper.swift; sourceTree = "<group>"; };
 		04A485F71DBF18F400016DA2 /* reactive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reactive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A485FA1DBF18F400016DA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04A485FC1DBF18F400016DA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +100,6 @@
 		048847B51DBF2FDF0095FA60 /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
-				048847BA1DBF358E0095FA60 /* VTWebservice.swift */,
 				04EB220B1DBF235800536B28 /* ViewModel.swift */,
 			);
 			name = ModelView;
@@ -101,7 +108,7 @@
 		048847B61DBF2FF60095FA60 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				048847B71DBF30240095FA60 /* ProjectModel.swift */,
+				048847B71DBF30240095FA60 /* Model.swift */,
 				048847BC1DBF3C6D0095FA60 /* ProjectTableViewCell.swift */,
 			);
 			name = Model;
@@ -111,8 +118,20 @@
 			isa = PBXGroup;
 			children = (
 				04A485FC1DBF18F400016DA2 /* ViewController.swift */,
+				048847C01DBF5F290095FA60 /* DetailViewController.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		048847C21DBF63C90095FA60 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				048847C31DBF63C90095FA60 /* RAC.swift */,
+				048847C41DBF63C90095FA60 /* RACObserve.swift */,
+				048847C51DBF63C90095FA60 /* RACSignal+Extensions.swift */,
+				048847C61DBF63C90095FA60 /* TableViewBindingHelper.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		04A485EE1DBF18F400016DA2 = {
@@ -140,6 +159,7 @@
 		04A485F91DBF18F400016DA2 /* reactive */ = {
 			isa = PBXGroup;
 			children = (
+				048847C21DBF63C90095FA60 /* Util */,
 				048847B91DBF30510095FA60 /* View */,
 				048847B61DBF2FF60095FA60 /* Model */,
 				048847B51DBF2FDF0095FA60 /* ModelView */,
@@ -374,12 +394,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048847BB1DBF358E0095FA60 /* VTWebservice.swift in Sources */,
 				048847BD1DBF3C6D0095FA60 /* ProjectTableViewCell.swift in Sources */,
+				048847C71DBF63C90095FA60 /* RAC.swift in Sources */,
+				048847CA1DBF63C90095FA60 /* TableViewBindingHelper.swift in Sources */,
 				04A485FD1DBF18F400016DA2 /* ViewController.swift in Sources */,
-				048847B81DBF30240095FA60 /* ProjectModel.swift in Sources */,
+				048847C91DBF63C90095FA60 /* RACSignal+Extensions.swift in Sources */,
+				048847B81DBF30240095FA60 /* Model.swift in Sources */,
 				04EB220C1DBF235800536B28 /* ViewModel.swift in Sources */,
 				04A485FB1DBF18F400016DA2 /* AppDelegate.swift in Sources */,
+				048847C81DBF63C90095FA60 /* RACObserve.swift in Sources */,
+				048847C11DBF5F290095FA60 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

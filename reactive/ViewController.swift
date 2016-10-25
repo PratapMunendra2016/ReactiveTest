@@ -9,75 +9,43 @@
 import UIKit
 import ReactiveCocoa
 
-
-extension RACSignal {
-    func subscribeNextAs<T>(nextClosure:(T) -> ()) -> () {
-        self.subscribeNext {
-            (next: AnyObject!) -> () in
-            let nextAsT = next as! T
-            nextClosure(nextAsT)
-        }
-    }
-}
-
 class ViewController: UIViewController {
-    @IBOutlet weak var searchTxt: UITextField!
-    @IBOutlet weak var projectListTbl: UITableView!
+    @IBOutlet weak var searchBarText: UITextField!
+    @IBOutlet weak var tableView: UITableView!
     
-    var service = ViewModel()
-    var pageNo : Int = 1
     var searchString : String = ""
+    var viewModelObject = ViewModel(fromString:"tren",pageNO: 1)
     
+    private var bindingHelper: TableViewBindingHelper<Model>!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        searchTxt.rac_textSignal().subscribeNext {  (next:AnyObject!) -> () in
-            let text = next as! String
-            self.searchString = text
-            self.service.searchKey = text;
-            self.service.getProjectList(self.pageNo) { (response, success) in
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.projectListTbl.reloadData()
-                }
-            }
-        }
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return service.responseArr.count
-    }
-    
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath){
-        if(indexPath.row==(service.responseArr.count-1)){
-            let i = self.pageNo+1 as Int
-            self.pageNo = i
-            self.service.getProjectList(i) { (response, success) in
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.projectListTbl.reloadData()
-                }
-            }
-        }
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        viewModelObject.navigation=self.navigationController!
+        let magnifyingGlassAttachment = NSTextAttachment(data: nil, ofType: nil)
+        magnifyingGlassAttachment.image = UIImage(named: "search")
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("ProjectListCell", forIndexPath: indexPath) as! ProjectTableViewCell
-        let data:ProjectModel! = service.responseArr[indexPath.row] as! ProjectModel
-        cell.setModelValue(data)
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let magnifyingGlassString = NSAttributedString(attachment: magnifyingGlassAttachment)
+        let attributedText = NSMutableAttributedString(attributedString: magnifyingGlassString)
         
-//        let detailViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
-//        detailViewController.dataModel = service.responseArr[indexPath.row] as! ProjectModel
-//        self.navigationController!.pushViewController(detailViewController, animated: true)
+        let searchString = NSAttributedString(string: " Search")
+        attributedText.appendAttributedString(searchString)
+        searchBarText.attributedPlaceholder = attributedText
+        
+        searchBarText.rac_textSignal() ~> RAC(self.viewModelObject, "searchKey")
+        
+        bindingHelper = TableViewBindingHelper(tableView: tableView, sourceSignal: self.viewModelObject.resultArray.producer, selectionCommand: self.viewModelObject.executeCellSelection,viewModel:viewModelObject)
+        
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 75
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.title="Git Trending"
     }
-    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        self.title="Back"
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

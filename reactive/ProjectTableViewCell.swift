@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import ReactiveCocoa
+import Result
 
-class ProjectTableViewCell: UITableViewCell {
+class ProjectTableViewCell: UITableViewCell,ReactiveView {
 
     
     @IBOutlet weak var projectNameLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var StarsLbl: UILabel!
     
-    var data: ProjectModel!
+    var data: Model!
     
     
     override func awakeFromNib() {
@@ -23,13 +25,14 @@ class ProjectTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func setModelValue(data:ProjectModel){
-        
-       // let data:ProjectModel! = service.responseArr[indexPath.row] as! ProjectModel
-        self.projectNameLbl.text = data.developerName
-        self.StarsLbl.text = String(format: "Stars :  %d",data.stars)
-        self.descLbl.text = data.description
+    func bindViewModel(viewModel: AnyObject) {
+        let devloper = viewModel as! Model
+        projectNameLbl.text = devloper.projectName
+        StarsLbl.text = String(format: "Stars :  %d",devloper.stars)
+        descLbl.text = devloper.description
     }
+    
+
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

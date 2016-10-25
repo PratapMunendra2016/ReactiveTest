@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ProjectModel{
+class Model{
     var projectName: String
     var stars: Int
     var forks: Int
@@ -17,7 +17,6 @@ class ProjectModel{
     var devloperImage : String
     
     init(json: NSDictionary) {
-        
         
         self.projectName = json.valueForKey("full_name") as! String!
         self.stars = json.valueForKey("stargazers_count") as! Int!
