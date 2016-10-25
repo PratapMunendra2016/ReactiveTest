@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import ReactiveCocoa
+
+class ViewModel{
+
+    var searchText :NSString = ""
+    var searchResults: NSArray = []
+    var searchCommand : RACCommand!
+    
+}
