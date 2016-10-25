@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		048847B81DBF30240095FA60 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847B71DBF30240095FA60 /* ProjectModel.swift */; };
+		048847BB1DBF358E0095FA60 /* VTWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847BA1DBF358E0095FA60 /* VTWebservice.swift */; };
+		048847BD1DBF3C6D0095FA60 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847BC1DBF3C6D0095FA60 /* ProjectTableViewCell.swift */; };
 		04A485FB1DBF18F400016DA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A485FA1DBF18F400016DA2 /* AppDelegate.swift */; };
 		04A485FD1DBF18F400016DA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A485FC1DBF18F400016DA2 /* ViewController.swift */; };
 		04A486001DBF18F400016DA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A485FE1DBF18F400016DA2 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		048847B71DBF30240095FA60 /* ProjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
+		048847BA1DBF358E0095FA60 /* VTWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VTWebservice.swift; sourceTree = "<group>"; };
+		048847BC1DBF3C6D0095FA60 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		04A485F71DBF18F400016DA2 /* reactive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reactive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A485FA1DBF18F400016DA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04A485FC1DBF18F400016DA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 		048847B51DBF2FDF0095FA60 /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
+				048847BA1DBF358E0095FA60 /* VTWebservice.swift */,
 				04EB220B1DBF235800536B28 /* ViewModel.swift */,
 			);
 			name = ModelView;
@@ -97,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				048847B71DBF30240095FA60 /* ProjectModel.swift */,
+				048847BC1DBF3C6D0095FA60 /* ProjectTableViewCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -368,6 +374,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048847BB1DBF358E0095FA60 /* VTWebservice.swift in Sources */,
+				048847BD1DBF3C6D0095FA60 /* ProjectTableViewCell.swift in Sources */,
 				04A485FD1DBF18F400016DA2 /* ViewController.swift in Sources */,
 				048847B81DBF30240095FA60 /* ProjectModel.swift in Sources */,
 				04EB220C1DBF235800536B28 /* ViewModel.swift in Sources */,
