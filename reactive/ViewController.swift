@@ -25,15 +25,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var projectListTbl: UITableView!
     
     var service = ViewModel()
+    var pageNo : Int = 1
+    var searchString : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         searchTxt.rac_textSignal().subscribeNext {  (next:AnyObject!) -> () in
             let text = next as! String
-            print(text)
-            self.service.searchKey=text;
-            self.service.getProjectList { (response, success) in
+            self.searchString = text
+            self.service.searchKey = text;
+            self.service.getProjectList(self.pageNo) { (response, success) in
                 dispatch_async(dispatch_get_main_queue()) {
                     self.projectListTbl.reloadData()
                 }
@@ -45,17 +47,28 @@ class ViewController: UIViewController {
         return service.responseArr.count
     }
     
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath){
+        if(indexPath.row==(service.responseArr.count-1)){
+            let i = self.pageNo+1 as Int
+            self.pageNo = i
+            self.service.getProjectList(i) { (response, success) in
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.projectListTbl.reloadData()
+                }
+            }
+        }
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ProjectListCell", forIndexPath: indexPath) as! ProjectTableViewCell
-        
         let data:ProjectModel! = service.responseArr[indexPath.row] as! ProjectModel
         cell.setModelValue(data)
-        
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
 //        let detailViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
 //        detailViewController.dataModel = service.responseArr[indexPath.row] as! ProjectModel
 //        self.navigationController!.pushViewController(detailViewController, animated: true)
@@ -69,7 +82,4 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-
