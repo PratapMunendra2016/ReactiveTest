@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		048847B81DBF30240095FA60 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847B71DBF30240095FA60 /* Model.swift */; };
-		048847BD1DBF3C6D0095FA60 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847BC1DBF3C6D0095FA60 /* ProjectTableViewCell.swift */; };
+		048847BD1DBF3C6D0095FA60 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847BC1DBF3C6D0095FA60 /* TableViewCell.swift */; };
 		048847C11DBF5F290095FA60 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847C01DBF5F290095FA60 /* DetailViewController.swift */; };
 		048847C71DBF63C90095FA60 /* RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847C31DBF63C90095FA60 /* RAC.swift */; };
 		048847C81DBF63C90095FA60 /* RACObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048847C41DBF63C90095FA60 /* RACObserve.swift */; };
@@ -45,7 +45,7 @@
 
 /* Begin PBXFileReference section */
 		048847B71DBF30240095FA60 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		048847BC1DBF3C6D0095FA60 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
+		048847BC1DBF3C6D0095FA60 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		048847C01DBF5F290095FA60 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		048847C31DBF63C90095FA60 /* RAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAC.swift; sourceTree = "<group>"; };
 		048847C41DBF63C90095FA60 /* RACObserve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACObserve.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				048847B71DBF30240095FA60 /* Model.swift */,
-				048847BC1DBF3C6D0095FA60 /* ProjectTableViewCell.swift */,
+				048847BC1DBF3C6D0095FA60 /* TableViewCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -394,7 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048847BD1DBF3C6D0095FA60 /* ProjectTableViewCell.swift in Sources */,
+				048847BD1DBF3C6D0095FA60 /* TableViewCell.swift in Sources */,
 				048847C71DBF63C90095FA60 /* RAC.swift in Sources */,
 				048847CA1DBF63C90095FA60 /* TableViewBindingHelper.swift in Sources */,
 				04A485FD1DBF18F400016DA2 /* ViewController.swift in Sources */,

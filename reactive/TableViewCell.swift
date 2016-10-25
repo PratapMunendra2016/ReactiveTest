@@ -10,7 +10,7 @@ import UIKit
 import ReactiveCocoa
 import Result
 
-class ProjectTableViewCell: UITableViewCell,ReactiveView {
+class TableViewCell: UITableViewCell,ReactiveView {
 
     
     @IBOutlet weak var projectNameLbl: UILabel!

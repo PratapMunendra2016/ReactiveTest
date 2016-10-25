@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var searchString : String = ""
-    var viewModelObject = ViewModel(fromString:"tren",pageNO: 1)
+    var viewModelObject = ViewModel(fromString:"",pageNO: 1)
     
     private var bindingHelper: TableViewBindingHelper<Model>!
     override func viewDidLoad() {

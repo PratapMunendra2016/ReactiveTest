@@ -21,7 +21,9 @@ class TableViewBindingHelper<T: AnyObject> : NSObject {
     //MARK: Properties
     
     var delegate: UITableViewDelegate?
-    private let tableView: UITableView
+    
+     private let tableView: UITableView
+//    private let templateCell: UITableViewCell
     private let selectionCommand: RACCommand?
     private let dataSource: DataSource
     private let viewModel: ViewModel
@@ -31,6 +33,7 @@ class TableViewBindingHelper<T: AnyObject> : NSObject {
         self.tableView = tableView
         self.selectionCommand = selectionCommand
         self.viewModel=viewModel
+
         dataSource = DataSource(data: nil, selectionCommand: selectionCommand,viewModel: viewModel)
         super.init()
         
@@ -57,6 +60,7 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     init(data: [AnyObject]?, selectionCommand:RACCommand?,viewModel: ViewModel) {
         self.data = data
         self.viewModel = viewModel
+
         self.selectionCommand=selectionCommand
     }
     
@@ -69,13 +73,13 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == (self.data!.count-1){
-            self.viewModel.pageNO+1;
+            self.viewModel.pageNO=self.viewModel.pageNO+1;
             self.viewModel.getProjectList();
         }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCellWithIdentifier("ProjectListCell"),
+        guard let cell = tableView.dequeueReusableCellWithIdentifier("TableViewCell"),
             
             reactiveView = cell as? ReactiveView else {
                 return UITableViewCell()

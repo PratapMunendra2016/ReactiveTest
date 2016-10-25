@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="69" width="320" height="491"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProjectListCell" rowHeight="86" id="Rg0-Vd-aZD" customClass="ProjectTableViewCell" customModule="reactive" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCell" rowHeight="86" id="Rg0-Vd-aZD" customClass="TableViewCell" customModule="reactive" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="320" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rg0-Vd-aZD" id="Lrq-aA-jSR">
@@ -145,9 +145,9 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="StarsLbl" destination="PJh-Ti-QKK" id="9Ol-yC-zuv"/>
-                                            <outlet property="descLbl" destination="AIF-sj-hgB" id="9iV-K5-ckT"/>
-                                            <outlet property="projectNameLbl" destination="Lz6-dv-SKB" id="KSO-aj-CTu"/>
+                                            <outlet property="StarsLbl" destination="PJh-Ti-QKK" id="o1j-0A-ets"/>
+                                            <outlet property="descLbl" destination="AIF-sj-hgB" id="Fjz-Xa-qZJ"/>
+                                            <outlet property="projectNameLbl" destination="Lz6-dv-SKB" id="Gyl-04-ZZO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
