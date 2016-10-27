@@ -4,14 +4,14 @@ The main idea of the project is to list trending projects of Github and when tap
 
 #Required
 
-    Swift 2.3, Xcode 7.3
+    Swift 2.2, Xcode 7.3
     iOS 9+
 
 
 
 #Usage
 
-For Installing it on Swift 2.3 with CocoaPods, specify it in your 'Podfile'.
+For Installing it on Swift 2.2 with CocoaPods, specify it in your 'Podfile'.
 ```
 
 platform :ios, '9.0'
